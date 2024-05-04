@@ -151,3 +151,40 @@ steps:
     Push changes and tags to GitHub:
         git push origin main --tags
 ```
+Q.2: For a project that deals with large binary files, integrate Git LFS (Large File Storage) to handle these files efficiently. Demonstrate how to add, commit, and push binary files to the repository, ensuring they are tracked by Git LFS correctly. Clone the repository on another machine to verify that the binary files are downloaded correctly.
+
+In the repository ‘git_assignment_HeroVired’, create a branch ‘lfs’. Upload any large file whose size is over ‘200mb’ and try to push this file into the repository.
+
+```
+Step 1: Install Git LFS
+    Install git lfs from it's official website.
+```
+```
+Step 2: Create a lfs branch and initialize Git LFS in your repository.
+    Clone the Repository:
+        git clone https://github.com/Sukhilnair/git_assignment_HeroVired.git
+    Navigate to your repository directory
+        cd git_assignment_HeroVired
+    Create a new branch named lfs and switch to it:
+        git checkout -b lfs
+    Initialize Git LFS by running:
+        git lfs install
+```
+```
+Step 3: Track large files using Git LFS
+    To track large files, you need to specify the file extensions you want Git LFS to manage:
+        git lfs track "*.mkv"
+```
+```
+Step 4: Add, commit, and push large files
+    Now, you can add, commit, and push your large binary files.
+        git add Complete_Git_and_GitHub_Tutorial_for_Beginners.mkv
+        git commit -m "Add large binary file"
+        git push origin lfs
+```
+```
+Step 5: Clone the repository on another machine
+    To verify that the binary files are downloaded correctly, clone the repository on another machine:
+        git clone https://github.com/Sukhilnair/git_assignment_HeroVired.git
+        git checkout lfs
+```
