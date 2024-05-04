@@ -188,3 +188,126 @@ Step 5: Clone the repository on another machine
         git clone https://github.com/Sukhilnair/git_assignment_HeroVired.git
         git checkout lfs
 ```
+
+Q.3: In this same GitHub repository, create a new branch ‘geometry-calculator’, we'll work on a simple Python program that calculates the area of a circle and the area of a rectangle. We'll use Git stash to switch between working on multiple features (calculating circle area and calculating rectangle area) without committing incomplete changes.
+
+```
+import math
+
+class GeometryCalculator:
+
+    def calculate_circle_area(self, radius):
+        return math.pi * radius ** 2
+
+    def calculate_rectangle_area(self, length, width):
+        return length * width
+
+if __name__ == "__main__":
+calculator = GeometryCalculator()
+# TODO: Implement the feature to calculate the area of a circle
+# radius = 5
+# print(f"The area of the circle with radius {radius} = {calculator.calculate_circle_area(radius)}")
+
+# TODO: Implement the feature to calculate the area of a rectangle # length = 10
+# width = 6
+# print(f"The area of the rectangle with length {length} and width {width} ={calculator.calculate_rectangle_area(length, width)}")
+```
+
+Workflow Steps:
+
+a. Create a New Branch:
+
+- Create a new branch named "feature/circle-area" to work on the circle area feature
+
+```
+    git checkout -b feature/circle-area
+```
+
+b. Stash Changes for Circle Area Feature:
+
+- Before committing the changes, stash them using git stash to save the incomplete feature implementation.
+
+- Verify that the working directory is clean
+
+```
+    git stash
+    git status
+```
+
+c. Create a New Branch for Rectangle Area Feature:
+
+- Create a new branch named "feature/rectangle-area" to work on the rectangle area
+```
+    git checkout -b feature/rectangle-area
+```
+
+d. Stash Changes for Rectangle Area Feature:
+
+- Before committing the changes, stash them using git stash to save the incomplete feature implementation.
+
+- Verify that the working directory is clean
+
+```
+    git stash
+    git status 
+
+```
+
+e. Switch Back to Circle Area Branch:
+
+- Switch back to the "feature/circle-area" branch to continue working on the circle area feature.
+
+- Retrieve the stashed changes
+
+- Complete the circle area feature implementation and save the changes. f. Commit and Push Circle Area Feature:
+
+```
+    git checkout feature/circle-area
+    git stash pop
+    Modifiy the above code for circle area feature.
+    git add .
+    git commit -m "Implemented circle area feature"
+    git push origin feature/circle-area
+```
+g. Switch Back to Rectangle Area Branch:
+
+- Switch back to the "feature/rectangle-area" branch to continue working on the rectangle area feature.
+
+- Retrieve the stashed changes
+
+- Complete the rectangle area feature implementation and save the changes. h. Commit and Push Rectangle Area Feature
+```
+    git checkout feature/circle-area
+    git stash pop
+    Modifiy the above code for rectangle area feature.
+    git add .
+    git commit -m "Implemented circle area feature"
+    git push origin feature/circle-area
+```
+
+
+i. Create Pull Requests:
+
+- Create a pull request to the ‘dev’ branch.
+```
+1. Create a pull request for the circle area feature (`feature/circle-area`) into the `dev` branch.
+    - Navigate to your repository on GitHub and click on the "Pull Requests" tab.
+    - Click on "New pull request".
+    - Choose the `dev` branch as the base branch and `feature/circle-area` as the compare branch.
+    - Click on "Create pull request".
+    - Provide a title and description for your pull request.
+    - Click on "Create pull request" to finalize.
+
+2. Create a pull request for the rectangle area feature (`feature/rectangle-area`) into the `dev` branch.
+    - Navigate to your repository on GitHub and click on the "Pull Requests" tab.
+    - Click on "New pull request".
+    - Choose the `dev` branch as the base branch and `feature/rectangle-area` as the compare branch.
+    - Click on "Create pull request".
+    - Provide a title and description for your pull request.
+    - Click on "Create pull request" to finalize.
+
+```
+
+j. Review and Merge
+
+- Have another team member or reviewer review your pull requests. - After receiving approval, merge both pull requests into the main branch.
