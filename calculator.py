@@ -30,7 +30,7 @@ if __name__ == "__main__":
     # Example usage
     calculator = Calculator()
     num1 = 16
-    num2 = 0
+    num2 = 4
 
     print(f"{num1} + {num2} = {calculator.add(num1, num2)}")
     print(f"{num1} - {num2} = {calculator.subtract(num1, num2)}")
